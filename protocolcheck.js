@@ -190,7 +190,7 @@ module.exports = function(uri, failCb, successCb, unsupportedCb) {
         var browser = checkBrowser();
 
         if (browser.isFirefox) {
-            openUriUsingFirefox(uri, failCallback, successCallback);
+            openUriWithTimeoutHack(uri, failCallback, successCallback);
         } else if (browser.isChrome || browser.isIOS) {
             openUriWithTimeoutHack(uri, failCallback, successCallback);
         } else if (browser.isIE) {
